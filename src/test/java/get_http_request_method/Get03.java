@@ -38,10 +38,27 @@ public class Get03 extends JsonPlaceHolderBaseUrl {
 
         //Get Requesti gönder ve response al
 
-        Response response = given().spec(spec).when().get("/{bir}/{iki}");
+        Response response = given()
+                .spec(spec)
+                .when()
+                .get("/{bir}/{iki}");
 
         //validation yani kontrol aşaması
 
-        response.then().assertThat().statusCode(200).contentType(ContentType.JSON).body("title", equalTo("et itaque necessitatibus maxime molestiae qui quas velit"));
+        response
+                .then()
+                .assertThat()
+                .statusCode(200)
+                .contentType(ContentType.JSON)
+                .body("title", equalTo("et itaque necessitatibus maxime molestiae qui quas velit"))
+                .body("completed", equalTo(false)).body("userId", equalTo(2));
+
+        response
+                .then()
+                .assertThat()
+                .body("title", equalTo("et itaque necessitatibus maxime molestiae qui quas velit"),
+                        "completed", equalTo(false),
+                        "userId", equalTo(2)
+                );
     }
 }
