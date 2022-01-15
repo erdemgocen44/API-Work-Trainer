@@ -1,11 +1,13 @@
 package get_http_request_method;
-import io.restassured.builder.RequestSpecBuilder;
+
+import base_url.HerokuappBaseUrl;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import io.restassured.specification.RequestSpecification;
 import org.junit.Test;
+
 import static io.restassured.RestAssured.given;
-public class Get01 {
+
+public class Get01 extends HerokuappBaseUrl {
     //Gherkin key words
     //given   => baslangic islemini temsil eder. pre-requisite
     //WHen    => islemin action kismini tanimlar
@@ -24,12 +26,13 @@ public class Get01 {
         Status Line should be HTTP/1.1 200 OK
      */
     @Test
-    public void get01(){
+    public void get01() {
         String endpoint = "https://restful-booker.herokuapp.com/booking/3";
         //organize bir yol degil
         Response response = given().when().get(endpoint);
         response.prettyPrint();
     }
+
     /*
  Given
         https://restful-booker.herokuapp.com/booking/3
@@ -43,12 +46,9 @@ public class Get01 {
      Status Line should be HTTP/1.1 200 OK
   */
     @Test
-    public void test(){
-        // https://restful-booker.herokuapp.com/booking/3
-        RequestSpecification spec;
-        spec = new RequestSpecBuilder().setBaseUri("https://restful-booker.herokuapp.com").build();
+    public void test() {
         //Set the url / urli set et
-        spec.pathParams("bir", "booking","iki", 3);
+        spec.pathParams("bir", "booking", "iki", 3);
         //   /{bir}/{iki}
         //Get request yap ve Response al
         Response response = given().spec(spec).when().get("/{bir}/{iki}");

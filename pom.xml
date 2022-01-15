@@ -14,9 +14,7 @@
     </properties>
 
 
-
     <!-- Get your dependencies-->
-
 
 
     <dependencies>
@@ -60,8 +58,6 @@
 
 
     </dependencies>
-
-
 
 
     <!--    We need to provide plugins-->
@@ -122,11 +118,6 @@
             </plugin>
         </plugins>
     </build>
-
-
-
-
-
 
 
 </project>

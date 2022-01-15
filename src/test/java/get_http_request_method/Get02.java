@@ -5,8 +5,7 @@ import io.restassured.response.Response;
 import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class Get02 extends HerokuappBaseUrl {
     /*
@@ -23,13 +22,15 @@ public class Get02 extends HerokuappBaseUrl {
         //Set the url  / url olustur
         spec.pathParams("bir", "booking", "iki", 1001);
         //Set the expected data / beklenen datayi olustur
-        //Send the Get request and Get the response  / Get Request yapiniz ve Response alienize
+        //Send the Get request and Get the response  / Get Request yapiniz ve Response aliniz
         Response response = given().spec(spec).when().get("/{bir}/{iki}");
         //validation yap / Control et / assert et
         response.then().assertThat().statusCode(404).statusLine("HTTP/1.1 404 Not Found");
         System.out.println(response.asString());
         assertEquals("Data birbiri ile uyum icerisinde degil", "Not Found", response.asString());
         assertTrue(response.asString().contains("Not Found"));
+        System.out.println("Not Found".contains("Techproed"));
+        assertFalse(response.asString().contains("techproed"));
         System.out.println(response.getHeader("Server"));
         assertEquals(response.getHeader("Server"), "Cowboy");
     }
