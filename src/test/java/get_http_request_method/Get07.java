@@ -1,6 +1,6 @@
 package get_http_request_method;
 
-import base_urls.DummyApiBasUrl;
+import base_urls.DummyApiBaseUrl;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
@@ -11,7 +11,7 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.assertEquals;
 
-public class Get07 extends DummyApiBasUrl {
+public class Get07 extends DummyApiBaseUrl {
 
      /*
         Given

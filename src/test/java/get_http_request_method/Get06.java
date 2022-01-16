@@ -1,6 +1,6 @@
 package get_http_request_method;
 
-import base_urls.DummyApiBasUrl;
+import base_urls.DummyApiBaseUrl;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.Test;
@@ -8,7 +8,7 @@ import org.junit.Test;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.hasItems;
 
-public class Get06 extends DummyApiBasUrl {
+public class Get06 extends DummyApiBaseUrl {
     /*
      When
        I send a GET Request to the URL http://dummy.restapiexample.com/api/v1/employees
