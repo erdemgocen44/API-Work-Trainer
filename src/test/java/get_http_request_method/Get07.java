@@ -1,6 +1,6 @@
 package get_http_request_method;
 
-import base_url.DummyApiBasUrl;
+import base_urls.DummyApiBasUrl;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;

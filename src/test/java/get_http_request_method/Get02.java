@@ -1,6 +1,6 @@
 package get_http_request_method;
 
-import base_url.HerokuappBaseUrl;
+import base_urls.HerokuappBaseUrl;
 import io.restassured.response.Response;
 import org.junit.Test;
 
